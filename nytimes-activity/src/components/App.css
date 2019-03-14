@@ -1,6 +1,32 @@
+@import url("http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
+
 body {
   text-align: center;
   font-family: Roboto;
+}
+
+.search-bar {
+  border-radius: 1px;
+  background: #fff;
+  margin: 20px;
+}
+
+.search-bar .form-control {
+  border-radius: 2px;
+  width: 80%
+}
+.search-bar .btn {
+  border-radius: 2px;
+  border-color: #d3d3d3;
+  background: #f8f8f8;
+  width: 20%;
+  margin-left: -1px;
+}
+
+.search-bar .btn:hover {
+  border-color: #c6c6c6;
+  background: #f0f0f0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.10);
 }
 
 .moto {
@@ -17,7 +43,7 @@ body {
 
 .card-container {
   display: inline-block;
-  width: 98%;
+  width: 95%;
   height: 720px;
   margin: 10px;
   margin-top: 20px;
@@ -25,6 +51,7 @@ body {
   box-sizing: border-box;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  border-radius: 2px;
 }
 
 .card-container::-webkit-scrollbar {
@@ -109,22 +136,16 @@ body {
 
 
 .post-footer {
-  position: absolute;
   text-align: center;
+  margin-top: 20px;
   font-size: 10px;
   width: inherit;
-  /* padding: 2px;
-  margin-top: 20px; */
-  bottom: 30px;
-  left: 0px;
-  right: 0px;
   font-weight: 500;
   letter-spacing: 1px;
 }
 
 .post-section {
   float: left;
-  margin-right: 50em;
 }
 
 .post-date {
