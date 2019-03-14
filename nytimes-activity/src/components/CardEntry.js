@@ -4,27 +4,34 @@ import React from 'react'
 
 
 const CardEntry = (props) => {
-  console.log(props)
-  const imgStyle = {
-    backgroundImage: `url('${props.story.multimedia[4].url}')`,
-    zIndex: '-1'
+  const { story } = props
+  const { headline, snippet, section_name, multimedia, word_count, web_url, pub_date } = story
+  const publ_date = pub_date.substring(0, pub_date.indexOf('T'))
+  let image = ''
+  
+  if (multimedia.length > 0) {
+    for (let i = 0; i < multimedia.length; i++) {
+      if (multimedia[i].subType === 'superJumbo') {
+        image = multimedia[i]
+      }
+    }
   }
   return (
     <div className="cards">
-      <a href={props.story.url}>
-      <img className="card-img" src={props.story.multimedia[4].url} alt="" />
+      <a href={web_url}>
+      <img className="card-img" src={`https://www.nytimes.com/${image.url}`} alt="" />
       <div className="post-body">
-          <h3 className='post-title'>{props.story.title}</h3>
+          <h3 className='post-title'>{headline.main}</h3>
         <div className='ani-bar'></div>
         <div className='post-content'>
-          <div className='comments'>27 Comments</div>
-          <div className='post-text'>{props.story.abstract}</div>
+          <div className='comments'>{word_count} words</div>
+          <div className='post-text'>{snippet}</div>
+        </div>
+        <div className='post-footer'>
+          <span className='post-section'>{section_name.toUpperCase()}</span> 
+          <span className='post-date'>{publ_date}</span>
         </div>
       </div>
-        <div className='post-footer'>
-          <span className='post-section'>{props.story.section.toUpperCase()}</span> 
-          <span className='post-date'>{props.story.published_date}</span>
-        </div>
       </a>
     </div>
   )

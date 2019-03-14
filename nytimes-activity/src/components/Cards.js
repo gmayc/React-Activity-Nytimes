@@ -11,14 +11,23 @@ class Cards extends Component {
   }
   
   render() {
+
     return (
       <div className='card-container'>
-        {this.state.stories.results.map((story, key) => (
-            <div key={key}>
-              <CardEntry story={story}/>
-            </div>
+        <div>
+          <div className='moto'>Making your Life Easier</div>
+          <h2 className='main-header'>What We Do?</h2>
+        </div>
+
+        {
+          this.state.stories.response.docs.map((story, key) => (
+              <div key={key}>
+                <CardEntry story={story}/>
+              </div>
+            )
           )
-        )}
+          // console.log(this.state)
+        }
       </div>
     )
   }
