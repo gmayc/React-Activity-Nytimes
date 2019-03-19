@@ -4,6 +4,7 @@ import Cards from './Cards';
 import SearchBar from './SearchBar';
 import mockData from '../MockData/mockData';
 import searchNyt from '../helperFuncs/searchNyt';
+import InputForm from './InputForm';
 
 class App extends Component {
   constructor(props) {
@@ -33,7 +34,12 @@ class App extends Component {
           <div className='moto'>Making your Life Easier</div>
           <h2 className='main-header'>What We Do?</h2>
         </div>
-        <Cards searchResults={this.state.searchResults}/>
+        <div>
+          <Cards searchResults={this.state.searchResults}/>
+        </div>
+        <div>
+          <InputForm/>
+        </div>
       </div>
     );
   }

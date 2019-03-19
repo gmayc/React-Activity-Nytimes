@@ -12,14 +12,16 @@ const CardEntry = (props) => {
   if (multimedia.length > 0) {
     for (let i = 0; i < multimedia.length; i++) {
       if (multimedia[i].subType === 'superJumbo') {
-        image = multimedia[i]
+        image = `https://www.nytimes.com/${multimedia[i].url}`
       }
     }
+  } else {
+    image = 'https://images.unsplash.com/photo-1503694978374-8a2fa686963a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
   }
   return (
     <div className="cards">
       <a href={web_url}>
-      <img className="card-img" src={`https://www.nytimes.com/${image.url}`} alt="" />
+      <img className="card-img" src={image} alt="" />
       <div className="post-body">
           <h3 className='post-title'>{headline.main}</h3>
         <div className='ani-bar'></div>
